@@ -190,9 +190,11 @@ export default {
 
 
             axios.post('/product', product).then(response => {
-                console.log(response.data);
+                //console.log(response.data.message);
+                alert(response.data.message);
             }).catch(error => {
                 console.log(error);
+                alert("Error");
             })
 
             console.log(product);

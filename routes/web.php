@@ -24,6 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware('auth')->group(function () {
     Route::resource('product-variant', 'VariantController');
     Route::resource('product', 'ProductController');
+    //Route::get('product/product-search',['as' => 'product-search', 'uses' => 'ProductController@productSearch'])->name('search');
+    Route::post('product/search', 'ProductController@productSearch')->name('search');
     Route::resource('blog', 'BlogController');
     Route::resource('blog-category', 'BlogCategoryController');
 });
